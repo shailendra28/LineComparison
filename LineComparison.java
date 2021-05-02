@@ -15,12 +15,15 @@ public class LineComparison {
         int y12=lf.getLineValue();
 		double length=lf.getLineLength(x1,x2,y1,y2);
 		double length1=lf.getLineLength(x11,x12,y11,y12);
-		if(String.valueOf(length).equals(String.valueOf(length1))){
-			System.out.println("Lines are equal");
-	
-	}
-	else
-		System.out.println("Lines are not equal");
+		int result=Double.valueOf(length).compareTo(Double.valueOf(length1));
+		if(result>=1){
+			System.out.println("line 1 is greater than line 2");
+		}
+		else if(result<0){
+			System.out.println("line 1 is less than line 2");
+		}
+		else
+			System.out.println("Lines are equa l");
 	}
 }
 class lineFunction{
